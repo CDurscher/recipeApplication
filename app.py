@@ -31,7 +31,8 @@ load_dotenv(dotenv_path)
 
 mongo = os.getenv('MONGO')
 
-client = pymongo.MongoClient(mongo)
+#client = pymongo.MongoClient(mongo)
+client = pymongo.MongoClient("mongodb+srv://recipe_user:IPmXgJegDMo9gI02@cluster0.q0md3.mongodb.net/recipe_db?retryWrites=true&w=majority", ssl=True,ssl_cert_reqs='CERT_NONE')
 
 db = client['recipe_db'] # Mongo collection
 users = db['users'] # Mongo document
